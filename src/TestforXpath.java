@@ -35,11 +35,13 @@ class TestforXpath {
 	        Thread.sleep(5000);
 	        driver.findElement(By.xpath("//*[@id=\"btn-book-appointment\"]")).click();
 	        Thread.sleep(5000);
+	        
 	        String result = driver.findElement(By.id("comment")).getText();
-	        if(result.equalsIgnoreCase("ฮัลโหลไอ้เจ้าตู่"))
-	        	System.out.println("Pass");
-	        else
-	        	System.out.println("Fail");
+	        assertEquals("ฮัลโหลไอ้เจ้าตู่", result);
+	        
+	        String title = driver.getTitle();
+	        	System.out.println(title);
+	        
 		driver.quit();
 
 	}
